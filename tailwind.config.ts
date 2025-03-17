@@ -26,15 +26,15 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#021a73', // Main primary color
+					DEFAULT: '#021a73', // Main primary color (blue)
 					light: '#1e3ba3',
 					dark: '#01104a',
 					foreground: '#ffffff'
 				},
 				secondary: {
-					DEFAULT: '#000000', // Changed to black
-					light: '#333333',
-					dark: '#000000',
+					DEFAULT: '#e5007e', // Changed to magenta
+					light: '#ff2a9d',
+					dark: '#b80064',
 					foreground: '#ffffff'
 				},
 				destructive: {

@@ -3,10 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,14 +24,14 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold text-primary">
-              <span className="text-primary">Fiber</span>
-              <span className="text-secondary">Net</span>
+              <span className="text-primary">DIGO</span>
+              <span className="text-secondary"> TELECOM</span>
             </Link>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <nav>
-              <ul className="flex space-x-6">
+              <ul className="flex space-x-4 lg:space-x-6">
                 <li><a href="#planes" className="text-gray-700 hover:text-primary transition-colors">Planes</a></li>
                 <li><a href="#beneficios" className="text-gray-700 hover:text-primary transition-colors">Beneficios</a></li>
                 <li><a href="#proceso" className="text-gray-700 hover:text-primary transition-colors">Proceso</a></li>
@@ -38,7 +40,7 @@ const Header = () => {
               </ul>
             </nav>
             <Button variant="default" className="bg-secondary hover:bg-secondary-light flex items-center gap-2">
-              <Phone size={16} />
+              {!isMobile && <Phone size={16} />}
               <span>Contratar Ahora</span>
             </Button>
           </div>

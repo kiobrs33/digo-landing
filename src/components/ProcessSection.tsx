@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { List, Calendar, Zap, ArrowRight } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const steps = [
   {
@@ -22,6 +23,8 @@ const steps = [
 ];
 
 const ProcessSection = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section id="proceso" className="py-20 bg-primary text-white">
       <div className="container mx-auto px-4">
@@ -32,21 +35,27 @@ const ProcessSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
           {steps.map((step, index) => (
-            <div key={index} className="text-center relative">
+            <div key={index} className="text-center relative flex flex-col items-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-light mb-6 mx-auto">
                 {step.icon}
               </div>
               
               {index < steps.length - 1 && (
                 <div className="hidden md:block absolute top-8 left-[calc(50%+2rem)] right-[calc(50%-2rem)] h-0.5 bg-primary-light">
-                  <ArrowRight className="absolute top-1/2 right-0 -translate-y-1/2 text-primary-light" />
+                  <ArrowRight className="absolute top-1/2 right-0 -translate-y-1/2 text-secondary" />
                 </div>
               )}
               
               <h3 className="text-xl font-bold mb-3">{step.title}</h3>
               <p className="opacity-80">{step.description}</p>
+              
+              {isMobile && index < steps.length - 1 && (
+                <div className="flex justify-center mt-8 mb-4">
+                  <ArrowRight size={24} className="text-secondary transform rotate-90" />
+                </div>
+              )}
             </div>
           ))}
         </div>

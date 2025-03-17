@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const plans = [
   {
@@ -48,6 +49,7 @@ const plans = [
 
 const PricingSection = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const isMobile = useIsMobile();
   
   return (
     <section id="planes" className="py-20 bg-gray-50">
@@ -78,7 +80,7 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <Card 
               key={index}
-              className={`border-2 ${plan.isPopular ? 'border-secondary scale-105' : 'border-gray-200'} hover:border-secondary hover:shadow-xl transition-all duration-300 relative`}
+              className={`border-2 ${plan.isPopular ? 'border-secondary scale-105 md:scale-105 sm:scale-100' : 'border-gray-200'} hover:border-secondary hover:shadow-xl transition-all duration-300 relative`}
             >
               {plan.isPopular && (
                 <div className="absolute top-0 right-0 bg-secondary text-white px-4 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">

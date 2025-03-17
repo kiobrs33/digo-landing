@@ -2,8 +2,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-4">
