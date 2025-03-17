@@ -32,9 +32,9 @@ export default {
 					foreground: '#ffffff'
 				},
 				secondary: {
-					DEFAULT: '#ff6b00',
-					light: '#ff8c33',
-					dark: '#cc5500',
+					DEFAULT: '#000000', // Changed to black
+					light: '#333333',
+					dark: '#000000',
 					foreground: '#ffffff'
 				},
 				destructive: {
@@ -69,9 +69,9 @@ export default {
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: '15px', // Updated to 15px
+				md: '10px',  // Updated proportionally
+				sm: '5px'    // Updated proportionally
 			},
 			keyframes: {
 				'accordion-down': {
