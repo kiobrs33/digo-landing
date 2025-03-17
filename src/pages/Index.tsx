@@ -10,6 +10,7 @@ import CoverageSection from '@/components/CoverageSection';
 import ContactSection from '@/components/ContactSection';
 import FaqSection from '@/components/FaqSection';
 import Footer from '@/components/Footer';
+import FloatingButtons from '@/components/FloatingButtons';
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
         <FaqSection />
       </main>
       <Footer />
+      <FloatingButtons />
     </div>
   );
 };
