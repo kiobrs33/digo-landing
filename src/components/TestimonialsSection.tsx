@@ -7,19 +7,19 @@ const testimonials = [
   {
     name: "Carlos Rodríguez",
     role: "Emprendedor",
-    content: "Desde que tengo FiberNet en mi negocio, las videoconferencias con clientes funcionan perfectamente. La velocidad y estabilidad son excepcionales, un gran cambio respecto a mi anterior proveedor.",
+    content: "Desde que tengo Digo Telecom en mi negocio, las videoconferencias con clientes funcionan perfectamente. La velocidad y estabilidad son excepcionales, un gran cambio respecto a mi anterior proveedor.",
     rating: 5
   },
   {
     name: "Ana García",
     role: "Teletrabajadora",
-    content: "Llevo 6 meses trabajando desde casa con la conexión de FiberNet y no he tenido ni un solo corte. El servicio al cliente es excelente y la instalación fue muy rápida.",
+    content: "Llevo 6 meses trabajando desde casa con la conexión de Digo Telecom y no he tenido ni un solo corte. El servicio al cliente es excelente y la instalación fue muy rápida.",
     rating: 5
   },
   {
     name: "Miguel Martín",
     role: "Gamer",
-    content: "Como gamer, necesito una conexión con baja latencia. FiberNet es simplemente perfecto, he reducido mi ping y ahora puedo jugar sin problemas de lag. ¡Totalmente recomendado!",
+    content: "Como gamer, necesito una conexión con baja latencia. Digo Telecom es simplemente perfecto, he reducido mi ping y ahora puedo jugar sin problemas de lag. ¡Totalmente recomendado!",
     rating: 4
   }
 ];

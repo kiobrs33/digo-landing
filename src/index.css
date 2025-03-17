@@ -99,3 +99,112 @@
     @apply bg-background text-foreground;
   }
 }
+
+.header__logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+/* PLANES SECTION */
+.plan {
+  background-color: #fff;
+  padding: 30px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan:hover {
+  border: 2px solid #e5007e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.plan__title {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background: rgba(245, 245, 250);
+  color: #e5007e;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.plan__title--recommend {
+  background: #021a73;
+  color: #fff;
+}
+
+.plan__type {
+  font-size: 1.5rem;
+  color: #021a73;
+  margin: 20px 0 5px;
+}
+
+.plan__speed-promo {
+  font-size: 1.5rem;
+  color: #e5007e;
+}
+
+.plan__speed-promo strong {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.plan__description {
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.plan__description span {
+  color: #e5007e;
+}
+
+.plan__price {
+  font-size: 1rem;
+  color: #000;
+  margin: 20px 0 0;
+}
+
+.plan__price strong {
+  font-size: 2.5rem;
+  color: #000;
+}
+
+.plan__price-regular {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.plan__price strong {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  color: #021a73;
+  font-weight: 700;
+}
+
+.plan__cta-button {
+  padding: 8px 0;
+  background-color: #e5007e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 15px;
+  display: block;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.plan__cta-button:hover {
+  background-color: #021a73;
+}

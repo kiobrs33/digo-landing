@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "¿Hay permanencia en los contratos?",
-    answer: "No, en FiberNet no creemos en las permanencias. Puedes darte de baja cuando quieras sin ningún tipo de penalización. Estamos seguros de la calidad de nuestro servicio y por eso no necesitamos atarte con permanencias."
+    answer: "No, en Digo Telecom no creemos en las permanencias. Puedes darte de baja cuando quieras sin ningún tipo de penalización. Estamos seguros de la calidad de nuestro servicio y por eso no necesitamos atarte con permanencias."
   },
   {
     question: "¿La velocidad contratada es real?",
