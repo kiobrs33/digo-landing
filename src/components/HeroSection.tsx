@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { sendMessageHandle } = useWhatsapp();
 
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">
+    <section className="h-auto xl:h-screen flex items-center pt-32 pb-20 bg-gradient-to-br from-blue-100 to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
@@ -23,11 +23,11 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="bg-secondary hover:bg-secondary-light flex items-center gap-2"
-                onClick={() =>
-                  sendMessageHandle(
-                    "Me gustaría conocer más planes disponibles. ¿Podrían proporcionarme más información?"
-                  )
-                }
+                onClick={() => {
+                  document
+                    .getElementById("planes")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 <span>Ver Planes</span>
                 <ArrowRight size={18} />

@@ -131,7 +131,7 @@
   transform: translateX(-50%);
   white-space: nowrap;
   padding: 10px 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #e5007e;
   border-radius: 15px;
   background: rgba(245, 245, 250);
   color: #e5007e;
@@ -141,11 +141,13 @@
 
 .plan__title--recommend {
   background: #021a73;
+  border: 1px solid #021a73;
   color: #fff;
 }
 
 .plan__type {
   font-size: 1.5rem;
+  font-weight: 700;
   color: #021a73;
   margin: 20px 0 5px;
 }
@@ -156,12 +158,12 @@
 }
 
 .plan__speed-promo strong {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
 }
 
 .plan__description {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #000;
 }
 
@@ -170,26 +172,21 @@
 }
 
 .plan__price {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #000;
   margin: 20px 0 0;
 }
 
-.plan__price strong {
-  font-size: 2.5rem;
-  color: #000;
-}
-
 .plan__price-regular {
   font-size: 0.8rem;
-  font-weight: 600;
   color: #aaa;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
 .plan__price strong {
-  margin-bottom: 20px;
-  font-size: 3rem;
+  /* margin-bottom: 20px; */
+  font-size: 4rem;
   color: #021a73;
   font-weight: 700;
 }

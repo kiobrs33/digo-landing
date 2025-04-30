@@ -1,6 +1,6 @@
-import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import { digoInformation } from "@/data/constants";
 
 const Footer = () => {
   return (
@@ -147,12 +147,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-6">Contacto</h3>
             <ul className="space-y-3 text-gray-300">
-              <li>
-                Calle Ambrosio Vucetich 130, Parque Industrial, Arequipa, Peru
-              </li>
-              <li>967 471 827</li>
-              <li>digotelecomaqp@gmail.com</li>
-              <li>Lun-Vie: 9:00-20:00</li>
+              <li>{digoInformation.adress}</li>
+              <li>{digoInformation.phone}</li>
+              <li>{digoInformation.email}</li>
+              <li>{digoInformation.horario}</li>
             </ul>
           </div>
         </div>

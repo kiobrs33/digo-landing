@@ -1,6 +1,6 @@
 export const useWhatsapp = () => {
   const sendMessageHandle = (message: string = "Hola") => {
-    const phoneNumber = "51967471827"; // Número sin "+"
+    const phoneNumber = "5117012341"; // Número sin "+"
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;

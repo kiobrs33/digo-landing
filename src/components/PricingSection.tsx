@@ -7,107 +7,63 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { plans } from "@/data/constants";
 
-const plans = [
-  {
-    name: "Básico",
-    speed: "100 Mbps",
-    price: 29.99,
-    features: [
-      "100 Mbps simétricos",
-      "Router WiFi incluido",
-      "Instalación gratuita",
-      "Soporte técnico",
-    ],
-    isPopular: false,
-  },
-  {
-    name: "Estándar",
-    speed: "300 Mbps",
-    price: 39.99,
-    features: [
-      "300 Mbps simétricos",
-      "Router WiFi 5 incluido",
-      "Instalación gratuita",
-      "Soporte técnico prioritario",
-      "Cambio de domicilio gratuito",
-    ],
-    isPopular: true,
-  },
-  {
-    name: "Premium",
-    speed: "1000 Mbps",
-    price: 59.99,
-    features: [
-      "1 Gbps simétricos",
-      "Router WiFi 6 incluido",
-      "Instalación gratuita",
-      "Soporte técnico VIP 24/7",
-      "Cambio de domicilio gratuito",
-      "IP fija",
-    ],
-    isPopular: false,
-  },
-  {
-    name: "Premium",
-    speed: "1000 Mbps",
-    price: 59.99,
-    features: [
-      "1 Gbps simétricos",
-      "Router WiFi 6 incluido",
-      "Instalación gratuita",
-      "Soporte técnico VIP 24/7",
-      "Cambio de domicilio gratuito",
-      "IP fija",
-    ],
-    isPopular: false,
-  },
-];
-
-const planss = [
-  {
-    name: "Básico",
-    speed: "100",
-    price: 29.99,
-    features: [
-      "100 Mbps simétricos",
-      "Router WiFi incluido",
-      "Instalación gratuita",
-      "Soporte técnico",
-      "Cambio de domicilio gratuito",
-      "IP standart",
-    ],
-    isPopular: false,
-  },
-  {
-    name: "Estándar",
-    speed: "300",
-    price: 39.99,
-    features: [
-      "300 Mbps simétricos",
-      "Router WiFi 5 incluido",
-      "Instalación gratuita",
-      "Soporte técnico prioritario",
-      "Cambio de domicilio gratuito",
-      "IP standart",
-    ],
-    isPopular: true,
-  },
-  {
-    name: "Premium",
-    speed: "1000",
-    price: 59.99,
-    features: [
-      "1 Gbps simétricos",
-      "Router WiFi 6 incluido",
-      "Instalación gratuita",
-      "Soporte técnico VIP 24/7",
-      "Cambio de domicilio gratuito",
-      "IP fija",
-    ],
-    isPopular: false,
-  },
-];
+// const plans = [
+//   {
+//     name: "Básico",
+//     speed: "100 Mbps",
+//     price: 29.99,
+//     features: [
+//       "100 Mbps simétricos",
+//       "Router WiFi incluido",
+//       "Instalación gratuita",
+//       "Soporte técnico",
+//     ],
+//     isPopular: false,
+//   },
+//   {
+//     name: "Estándar",
+//     speed: "300 Mbps",
+//     price: 39.99,
+//     features: [
+//       "300 Mbps simétricos",
+//       "Router WiFi 5 incluido",
+//       "Instalación gratuita",
+//       "Soporte técnico prioritario",
+//       "Cambio de domicilio gratuito",
+//     ],
+//     isPopular: true,
+//   },
+//   {
+//     name: "Premium",
+//     speed: "1000 Mbps",
+//     price: 59.99,
+//     features: [
+//       "1 Gbps simétricos",
+//       "Router WiFi 6 incluido",
+//       "Instalación gratuita",
+//       "Soporte técnico VIP 24/7",
+//       "Cambio de domicilio gratuito",
+//       "IP fija",
+//     ],
+//     isPopular: false,
+//   },
+//   {
+//     name: "Premium",
+//     speed: "1000 Mbps",
+//     price: 59.99,
+//     features: [
+//       "1 Gbps simétricos",
+//       "Router WiFi 6 incluido",
+//       "Instalación gratuita",
+//       "Soporte técnico VIP 24/7",
+//       "Cambio de domicilio gratuito",
+//       "IP fija",
+//     ],
+//     isPopular: false,
+//   },
+// ];
 
 const PricingSection = () => {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -145,7 +101,7 @@ const PricingSection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {/* {plans.map((plan, index) => (
               <Card
                 key={index}
@@ -207,29 +163,34 @@ const PricingSection = () => {
                 </CardFooter>
               </Card>
             ))} */}
-            {planss.map((plan, index) => {
+            {plans.map((plan) => {
               return (
-                <div className="plan" key={index}>
+                <div
+                  className={`plan ${plan.id == 4 && "lg:col-start-2 lg:col-end-3"}`}
+                  key={plan.id}
+                >
                   <h3
                     className={`plan__title ${
                       plan.isPopular && "plan__title--recommend"
                     }`}
                   >
-                    Plan {plan.name}
+                    {plan.name}
                   </h3>
-                  <p className="plan__type">Internet 100% Fibra</p>
+                  <p className="plan__type">Internet 100% Fibra Óptica</p>
 
                   {/* <h2 className="plan__speed-real">{plan.speed} Mbps</h2> */}
                   <h2 className="plan__speed-promo">
                     <strong>{plan.speed}</strong> Mbps
                   </h2>
                   <p className="plan__description">
-                    Duplica tu velocidad <span>x6 Meses</span>
+                  ¡Velocidad al <span>máximo</span>!
                   </p>
                   <p className="plan__price">
-                    S/ <strong>{plan.price}</strong> /mes
+                    S/ <strong>{plan.price}</strong> x mes
                   </p>
-                  <p className="plan__price-regular">Precio Regular: S/119</p>
+                  <p className="plan__price-regular">
+                    Precio Regular: S/{plan.priceRegular}
+                  </p>
 
                   <ul className="flex flex-col items-center mb-5">
                     {plan.features.map((feature, i) => (

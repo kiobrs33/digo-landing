@@ -39,13 +39,11 @@ const Header = () => {
                 src={digoLogo}
                 alt="Digo Telecom Logo"
               />
-              <span className="text-primary">
-                DIGO<span className="text-secondary">TELECOM</span>
-              </span>
+              <span className="text-primary">Digo</span>
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 lg:space-x-8">
             <nav>
               <ul className="flex space-x-4 lg:space-x-6">
                 <li>
@@ -105,7 +103,7 @@ const Header = () => {
           </div>
 
           <button
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -115,14 +113,16 @@ const Header = () => {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-md">
+        <div className="lg:hidden bg-white shadow-md">
           <nav className="container mx-auto px-4 py-4">
             <ul className="space-y-4">
               <li>
                 <a
                   href="#planes"
                   className="block text-gray-700 hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   Planes
                 </a>

@@ -10,6 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { digoInformation, plans } from "@/data/constants";
 
 const ContactSection = () => {
   return (
@@ -69,13 +70,13 @@ const ContactSection = () => {
                         <SelectValue placeholder="Selecciona un plan" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="basic">Básico - 100 Mbps</SelectItem>
-                        <SelectItem value="standard">
-                          Estándar - 300 Mbps
-                        </SelectItem>
-                        <SelectItem value="premium">
-                          Premium - 1 Gbps
-                        </SelectItem>
+                        {plans.map((plan) => {
+                          return (
+                            <SelectItem value={plan.name} key={plan.id}>
+                              {`${plan.name} ${plan.speed}`}
+                            </SelectItem>
+                          );
+                        })}
                       </SelectContent>
                     </Select>
                   </div>
@@ -116,9 +117,9 @@ const ContactSection = () => {
                       <Phone size={20} className="text-secondary mr-4 mt-1" />
                       <div>
                         <h4 className="font-medium text-gray-900">Teléfono</h4>
-                        <p className="text-gray-600">+51 967 471 827</p>
+                        <p className="text-gray-600">{digoInformation.phone}</p>
                         <p className="text-sm text-gray-500 mt-1">
-                          Lun-Vie: 9:00-20:00
+                          {digoInformation.horario}
                         </p>
                       </div>
                     </div>
@@ -127,9 +128,7 @@ const ContactSection = () => {
                       <Mail size={20} className="text-secondary mr-4 mt-1" />
                       <div>
                         <h4 className="font-medium text-gray-900">Email</h4>
-                        <p className="text-gray-600">
-                          digotelecomaqp@gmail.com
-                        </p>
+                        <p className="text-gray-600">{digoInformation.email}</p>
                         <p className="text-sm text-gray-500 mt-1">
                           Respondemos en 24h
                         </p>
@@ -143,8 +142,7 @@ const ContactSection = () => {
                           Oficina Central
                         </h4>
                         <p className="text-gray-600">
-                          Calle Ambrosio Vucetich 130, Parque Industrial,
-                          Arequipa, Peru
+                          {digoInformation.adress}
                         </p>
                       </div>
                     </div>
