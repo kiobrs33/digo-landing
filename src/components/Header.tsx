@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 import digoLogo from "@/assets/images/digo-logo.jpg";
@@ -20,6 +20,23 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const isOnHome = location.pathname === "/";
+    const hasHash = location.hash;
+
+    if (isOnHome && hasHash) {
+      const id = hasHash.replace("#", "");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <header
@@ -47,44 +64,44 @@ const Header = () => {
             <nav>
               <ul className="flex space-x-4 lg:space-x-6">
                 <li>
-                  <a
-                    href="#planes"
+                  <NavLink
+                    to="/#planes"
                     className="text-gray-700 hover:text-primary transition-colors"
                   >
                     Planes
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#beneficios"
+                  <NavLink
+                    to="/#beneficios"
                     className="text-gray-700 hover:text-primary transition-colors"
                   >
                     Beneficios
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#proceso"
+                  <NavLink
+                    to="/#proceso"
                     className="text-gray-700 hover:text-primary transition-colors"
                   >
                     Instalacion
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#testimonios"
+                  <NavLink
+                    to="/#testimonios"
                     className="text-gray-700 hover:text-primary transition-colors"
                   >
                     Testimonios
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#cobertura"
+                  <NavLink
+                    to="#cobertura"
                     className="text-gray-700 hover:text-primary transition-colors"
                   >
                     Cobertura
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
@@ -117,51 +134,51 @@ const Header = () => {
           <nav className="container mx-auto px-4 py-4">
             <ul className="space-y-4">
               <li>
-                <a
-                  href="#planes"
+                <NavLink
+                  to="/#planes"
                   className="block text-gray-700 hover:text-primary transition-colors"
                   onClick={() => {
                     setMobileMenuOpen(false);
                   }}
                 >
                   Planes
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#beneficios"
+                <NavLink
+                  to="/#beneficios"
                   className="block text-gray-700 hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Beneficios
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#proceso"
+                <NavLink
+                  to="/#proceso"
                   className="block text-gray-700 hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Proceso
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#testimonios"
+                <NavLink
+                  to="/#testimonios"
                   className="block text-gray-700 hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Testimonios
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#cobertura"
+                <NavLink
+                  to="/#cobertura"
                   className="block text-gray-700 hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Cobertura
-                </a>
+                </NavLink>
               </li>
               <li>
                 <Button

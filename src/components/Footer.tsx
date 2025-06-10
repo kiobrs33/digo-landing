@@ -1,6 +1,16 @@
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+  FileWarning,
+  BookOpenText,
+} from "lucide-react";
 import { digoInformation } from "@/data/constants";
+import BookImg from "@/assets/images/book.png";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -56,44 +66,44 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-6">Enlaces Rápidos</h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#planes"
+                <NavLink
+                  to="/#planes"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Planes y Precios
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#beneficios"
+                <NavLink
+                  to="/#beneficios"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Beneficios
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#cobertura"
+                <NavLink
+                  to="/#cobertura"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Cobertura
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#proceso"
+                <NavLink
+                  to="/#proceso"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Cómo Contratarnos
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#contacto"
+                <NavLink
+                  to="/#contacto"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Contacto
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -142,6 +152,24 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+
+            <div className="flex flex-col items-center text-center mt-6">
+              <NavLink to="/libro-reclamaciones">
+                <img
+                  src={BookImg}
+                  alt="Libro de Reclamaciones"
+                  className="w-24 h-auto mb-4 shadow-md hover:scale-105 transition-transform cursor-pointer"
+                />
+              </NavLink>
+
+              <h3 className="text-lg font-bold mb-2 text-white flex items-center gap-2">
+                Libro de Reclamaciones
+              </h3>
+              <p className="text-gray-300 max-w-xs">
+                ¿Tienes una queja o reclamo? Haz clic en el libro para llenar el
+                formulario oficial.
+              </p>
+            </div>
           </div>
 
           <div>
