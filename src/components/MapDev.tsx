@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import iconMap from "./ui/iconMap";
 
-const position: [number, number] = [-16.420351, -71.5453393]; // -16.420351,-71.5453393
+const position: [number, number] = [-16.4203467,-71.5433957]; // -16.420351,-71.5453393
 
 export const MapDev = () => {
   return (
