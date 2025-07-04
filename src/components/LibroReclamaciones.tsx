@@ -15,21 +15,22 @@ import {
 import { Phone, Mail, MapPin, AlertCircle } from "lucide-react";
 import { digoInformation } from "@/data/constants";
 import { useState } from "react";
+import { axiosInstance } from "@/api/axiosInstance";
 
 const schema = z.object({
-  nombre: z.string().min(1, "Nombre requerido"),
-  apellidos: z.string().min(1, "Apellidos requeridos"),
+  firstNames: z.string().min(1, "Nombre requerido"),
+  lastNames: z.string().min(1, "Apellidos requeridos"),
   email: z.string().email("Email inválido"),
-  telefono: z.string().min(1, "Teléfono requerido"),
-  tipoReclamo: z.enum(["reclamo", "queja"], {
+  phone: z.string().min(1, "Teléfono requerido"),
+  claimType: z.enum(["reclamo", "queja"], {
     required_error: "Selecciona una opción",
   }),
-  tipoDocumento: z.enum(["dni", "ruc", "ce"], {
+  documentType: z.enum(["dni", "ruc", "ce"], {
     required_error: "Selecciona un tipo de documento",
   }),
-  numeroDocumento: z.string().min(1, "Requerido"),
-  producto: z.string().optional(),
-  descripcion: z.string().min(1, "Agrega una descripción"),
+  documentNumber: z.string().min(1, "Requerido"),
+  product: z.string().optional(),
+  description: z.string().min(1, "Agrega una descripción"),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -46,24 +47,25 @@ const LibroReclamaciones = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: FormData) => {
     try {
-      // const res = await fetch("/api/reclamos", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(data),
-      // });
+      const response = await axiosInstance.post("/claim", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-      // if (!res.ok) throw new Error("Error al enviar el formulario");
+      console.log("Respuesta:", response.data.data);
 
-      // alert("Reclamo enviado correctamente");
-      console.log(data);
-      console.log("enviado");
       reset();
       setSuccess(true);
+      alert("¡Reclamo enviado correctamente!");
     } catch (error) {
-      // alert("Hubo un problema: " + error.message);
-      console.log(error);
+      console.error(
+        "Error al enviar reclamo:",
+        error.response?.data || error.message
+      );
+      alert("Hubo un error al enviar tu reclamo.");
     }
   };
 
@@ -91,10 +93,13 @@ const LibroReclamaciones = () => {
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Nombre
                       </label>
-                      <Input {...register("nombre")} placeholder="Tu nombre" />
-                      {errors.nombre && (
+                      <Input
+                        {...register("firstNames")}
+                        placeholder="Tu nombre"
+                      />
+                      {errors.firstNames && (
                         <p className="text-sm text-red-500">
-                          {errors.nombre.message}
+                          {errors.firstNames.message}
                         </p>
                       )}
                     </div>
@@ -103,12 +108,12 @@ const LibroReclamaciones = () => {
                         Apellidos
                       </label>
                       <Input
-                        {...register("apellidos")}
+                        {...register("lastNames")}
                         placeholder="Tus apellidos"
                       />
-                      {errors.apellidos && (
+                      {errors.lastNames && (
                         <p className="text-sm text-red-500">
-                          {errors.apellidos.message}
+                          {errors.lastNames.message}
                         </p>
                       )}
                     </div>
@@ -135,12 +140,12 @@ const LibroReclamaciones = () => {
                         Teléfono
                       </label>
                       <Input
-                        {...register("telefono")}
+                        {...register("phone")}
                         placeholder="Tu número de teléfono"
                       />
-                      {errors.telefono && (
+                      {errors.phone && (
                         <p className="text-sm text-red-500">
-                          {errors.telefono.message}
+                          {errors.phone.message}
                         </p>
                       )}
                     </div>
@@ -151,8 +156,8 @@ const LibroReclamaciones = () => {
                       Tipo de Reclamación
                     </label>
                     <Select
-                      onValueChange={(val: FormData["tipoReclamo"]) =>
-                        setValue("tipoReclamo", val)
+                      onValueChange={(val: FormData["claimType"]) =>
+                        setValue("claimType", val)
                       }
                     >
                       <SelectTrigger>
@@ -163,9 +168,9 @@ const LibroReclamaciones = () => {
                         <SelectItem value="queja">Queja</SelectItem>
                       </SelectContent>
                     </Select>
-                    {errors.tipoReclamo && (
+                    {errors.claimType && (
                       <p className="text-sm text-red-500">
-                        {errors.tipoReclamo.message}
+                        {errors.claimType.message}
                       </p>
                     )}
                   </div>
@@ -176,8 +181,8 @@ const LibroReclamaciones = () => {
                         Tipo de Documento
                       </label>
                       <Select
-                        onValueChange={(val: FormData["tipoDocumento"]) =>
-                          setValue("tipoDocumento", val)
+                        onValueChange={(val: FormData["documentType"]) =>
+                          setValue("documentType", val)
                         }
                       >
                         <SelectTrigger>
@@ -191,9 +196,9 @@ const LibroReclamaciones = () => {
                           </SelectItem>
                         </SelectContent>
                       </Select>
-                      {errors.tipoDocumento && (
+                      {errors.documentType && (
                         <p className="text-sm text-red-500">
-                          {errors.tipoDocumento.message}
+                          {errors.documentType.message}
                         </p>
                       )}
                     </div>
@@ -202,12 +207,12 @@ const LibroReclamaciones = () => {
                         N° de Documento
                       </label>
                       <Input
-                        {...register("numeroDocumento")}
+                        {...register("documentNumber")}
                         placeholder="Ej: 12345678"
                       />
-                      {errors.numeroDocumento && (
+                      {errors.documentNumber && (
                         <p className="text-sm text-red-500">
-                          {errors.numeroDocumento.message}
+                          {errors.documentNumber.message}
                         </p>
                       )}
                     </div>
@@ -218,7 +223,7 @@ const LibroReclamaciones = () => {
                       Detalles del Servicio o Producto
                     </label>
                     <Input
-                      {...register("producto")}
+                      {...register("product")}
                       placeholder="Ej: Plan Fibra 100Mbps"
                     />
                   </div>
@@ -228,13 +233,13 @@ const LibroReclamaciones = () => {
                       Descripción del Reclamo
                     </label>
                     <Textarea
-                      {...register("descripcion")}
+                      {...register("description")}
                       placeholder="Escribe aquí los detalles de tu reclamo o queja"
                       rows={5}
                     />
-                    {errors.descripcion && (
+                    {errors.description && (
                       <p className="text-sm text-red-500">
-                        {errors.descripcion.message}
+                        {errors.description.message}
                       </p>
                     )}
                   </div>

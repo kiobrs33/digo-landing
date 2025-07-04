@@ -38,9 +38,9 @@ export const plans = [
     features: [
       "Router WiFi 5 incluido",
       "Instalación gratuita",
-      "Soporte técnico VIP 24/7",
+      "Soporte técnico prioritario",
       "Cambio de domicilio gratuito",
-      "Tv Digital Premiun + Netflix",
+      "Tv Digital Premiun",
     ],
     isPopular: false,
   },
@@ -53,9 +53,9 @@ export const plans = [
     features: [
       "Router WiFi 5 incluido",
       "Instalación especializada",
-      "Soporte técnico VIP 24/7",
+      "Soporte técnico prioritario",
       "Cambio de domicilio gratuito",
-      "Tv Digital Premiun + Netflix",
+      "Tv Digital Premiun",
     ],
     isPopular: false,
   },
