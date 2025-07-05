@@ -11,8 +11,24 @@ import {
 import { digoInformation } from "@/data/constants";
 import BookImg from "@/assets/images/book.png";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { axiosInstance } from "@/api/axiosInstance";
 
 const Footer = () => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      axiosInstance
+        .get("/claim") // 🔁 Reemplaza con tu endpoint real
+        .then(() => {
+          console.log("Servidor ping enviado");
+        })
+        .catch((error) => {
+          console.error("Error al hacer ping");
+        });
+    }, 2 * 60 * 1000); // 2 minutos
+    return () => clearInterval(interval); // Limpia el intervalo si se desmonta el componente
+  }, []);
+
   return (
     <footer className="bg-primary text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
