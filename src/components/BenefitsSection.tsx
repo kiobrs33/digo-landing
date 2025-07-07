@@ -21,8 +21,8 @@ const benefits = [
   },
   {
     icon: <Headset size={40} className="text-secondary" />,
-    title: "Soporte 24/7",
-    description: "Equipo técnico especializado disponible todos los días para resolver cualquier incidencia."
+    title: "Soporte",
+    description: "Equipo técnico especializado disponible con horario extendido para resolver cualquier incidencia."
   }
 ];
 
