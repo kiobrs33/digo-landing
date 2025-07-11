@@ -60,15 +60,15 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="hidden lg:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden lg:flex items-center space-x-5">
             <nav>
               <ul className="flex space-x-4 lg:space-x-6">
                 <li>
                   <NavLink
-                    to="/#planes"
+                    to="/#hero"
                     className="text-gray-700 hover:text-primary transition-colors"
                   >
-                    Planes
+                    Inicio
                   </NavLink>
                 </li>
                 <li>
@@ -77,6 +77,14 @@ const Header = () => {
                     className="text-gray-700 hover:text-primary transition-colors"
                   >
                     Beneficios
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/#planes"
+                    className="text-gray-700 hover:text-primary transition-colors"
+                  >
+                    Planes
                   </NavLink>
                 </li>
                 <li>
@@ -97,12 +105,20 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink
+                    to="/#pago"
+                    className="text-gray-700 hover:text-primary transition-colors"
+                  >
+                    Pagos
+                  </NavLink>
+                </li>
+                {/* <li>
+                  <NavLink
                     to="#cobertura"
                     className="text-gray-700 hover:text-primary transition-colors"
                   >
                     Cobertura
                   </NavLink>
-                </li>
+                </li> */}
               </ul>
             </nav>
             <Button
@@ -117,6 +133,18 @@ const Header = () => {
               {!isMobile && <Phone size={16} />}
               <span>Contratar Ahora</span>
             </Button>
+            {/* <Button
+              variant="default"
+              className="flex items-center gap-2"
+              onClick={() =>
+                sendMessageHandle(
+                  "Hola, estoy interesado en contratar el servicio"
+                )
+              }
+            >
+              {!isMobile && <Phone size={16} />}
+              <span>Login</span>
+            </Button> */}
           </div>
 
           <button
@@ -135,51 +163,60 @@ const Header = () => {
             <ul className="space-y-4">
               <li>
                 <NavLink
-                  to="/#planes"
-                  className="block text-gray-700 hover:text-primary transition-colors"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                  }}
+                  to="/#hero"
+                  className="text-gray-700 hover:text-primary transition-colors"
                 >
-                  Planes
+                  Inicio
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   to="/#beneficios"
-                  className="block text-gray-700 hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-700 hover:text-primary transition-colors"
                 >
                   Beneficios
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/#proceso"
-                  className="block text-gray-700 hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  to="/#planes"
+                  className="text-gray-700 hover:text-primary transition-colors"
                 >
-                  Proceso
+                  Planes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/#proceso"
+                  className="text-gray-700 hover:text-primary transition-colors"
+                >
+                  Instalacion
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   to="/#testimonios"
-                  className="block text-gray-700 hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-700 hover:text-primary transition-colors"
                 >
                   Testimonios
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/#cobertura"
-                  className="block text-gray-700 hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  to="/#pago"
+                  className="text-gray-700 hover:text-primary transition-colors"
                 >
-                  Cobertura
+                  Pagos
                 </NavLink>
               </li>
+              {/* <li>
+                  <NavLink
+                    to="#cobertura"
+                    className="text-gray-700 hover:text-primary transition-colors"
+                  >
+                    Cobertura
+                  </NavLink>
+                </li> */}
               <li>
                 <Button
                   variant="default"

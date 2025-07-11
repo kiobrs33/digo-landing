@@ -7,6 +7,7 @@ import CoverageSection from "@/components/CoverageSection";
 import ContactSection from "@/components/ContactSection";
 import FaqSection from "@/components/FaqSection";
 import { MapDev } from "@/components/MapDev";
+import { PaymentMethodsSection } from "@/components/PaymentMethodsSection";
 
 const Index = () => {
   return (
@@ -16,7 +17,8 @@ const Index = () => {
       <PricingSection />
       <ProcessSection />
       <TestimonialsSection />
-      <CoverageSection />
+      {/* <CoverageSection /> */}
+      <PaymentMethodsSection />
       <ContactSection />
       <MapDev />
       <FaqSection />

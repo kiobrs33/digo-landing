@@ -80,3 +80,10 @@ export const digoInformation = {
     },
   ],
 };
+
+import asistenciaImg from "@/assets/images/digo-asistencia.jpg";
+import toritoImg from "@/assets/images/digo_torito.png";
+import jugueteImg from "@/assets/images/digo-juguete.jpg";
+import pascuaImg from "@/assets/images/digo-pascua.jpg";
+
+export const carouselImages = [asistenciaImg, toritoImg, jugueteImg, pascuaImg];

@@ -3,12 +3,14 @@ import { useWhatsapp } from "@/hooks/useWhatsapp";
 import { ArrowRight, Zap } from "lucide-react";
 
 import benchImg from "@/assets/images/bench.jpg";
+import { Carousel } from "@/modules/home/components/Carousel";
+import { carouselImages } from "@/data/constants";
 
 const HeroSection = () => {
   const { sendMessageHandle } = useWhatsapp();
 
   return (
-    <section className="h-auto xl:h-screen flex items-center pt-32 pb-20 bg-gradient-to-br from-blue-100 to-white">
+    <section className="h-auto xl:h-screen flex items-center pt-32 pb-20 bg-gradient-to-br from-blue-100 to-white" id="hero">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
@@ -52,13 +54,14 @@ const HeroSection = () => {
           </div>
 
           <div className="md:w-1/2 md:pl-10 flex justify-center">
-            <div className="relative">
+            {/* <div className="relative">
               <img
                 src={benchImg}
                 alt="Fibra óptica de alta velocidad"
                 className="rounded-2xl shadow-xl relative z-10 w-full max-w-md animate-float"
               />
-            </div>
+            </div> */}
+            <Carousel images={carouselImages} />
           </div>
         </div>
       </div>

@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div>
             <div className="text-2xl font-bold mb-6">
               <span className="text-white">Digo</span>
@@ -168,24 +168,6 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-
-            <div className="flex flex-col items-center text-center mt-6">
-              <NavLink to="/libro-reclamaciones">
-                <img
-                  src={BookImg}
-                  alt="Libro de Reclamaciones"
-                  className="w-24 h-auto mb-4 shadow-md hover:scale-105 transition-transform cursor-pointer"
-                />
-              </NavLink>
-
-              <h3 className="text-lg font-bold mb-2 text-white flex items-center gap-2">
-                Libro de Reclamaciones
-              </h3>
-              <p className="text-gray-300 max-w-xs">
-                ¿Tienes una queja o reclamo? Haz clic en el libro para llenar el
-                formulario oficial.
-              </p>
-            </div>
           </div>
 
           <div>
@@ -196,6 +178,25 @@ const Footer = () => {
               <li>{digoInformation.email}</li>
               <li>{digoInformation.horario}</li>
             </ul>
+          </div>
+
+          <div className="flex flex-col items-center text-center">
+            <h3 className="text-lg font-bold mb-2 text-white flex items-center gap-2">
+              Libro de Reclamaciones
+            </h3>
+
+            <NavLink to="/libro-reclamaciones">
+              <img
+                src={BookImg}
+                alt="Libro de Reclamaciones"
+                className="w-24 h-auto mb-4 shadow-md hover:scale-105 transition-transform cursor-pointer"
+              />
+            </NavLink>
+
+            <p className="text-gray-300 max-w-xs">
+              ¿Tienes una queja o reclamo? Haz clic en el libro para llenar el
+              formulario oficial.
+            </p>
           </div>
         </div>
 
