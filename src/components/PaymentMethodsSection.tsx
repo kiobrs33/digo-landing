@@ -97,7 +97,7 @@ const paymentMethods = [
     image: logoYape,
     title: "Paga por Yape",
     description:
-      "Escanea nuestro código QR desde la app de Yape y realiza el pago al instante desde tu celular.",
+      "Realiza tu pago fácil y rápido con Yape. Ingresando al aplicativo desde tu celular.",
     modalContent: (
       <>
         <h2 className="font-semibold">PRIMERA OPCIÓN:</h2>
@@ -134,8 +134,7 @@ const paymentMethods = [
     key: "bcp",
     image: logoBcp,
     title: "BCP Banca Móvil",
-    description:
-      "Transfiere directamente a nuestra cuenta BCP desde banca móvil o ventanilla. Te enviamos los datos al solicitar el servicio.",
+    description: "Realiza tu pago fácil y rápido con Banca Móvil BCP. ¡Fácil y sin complicaciones!",
     modalContent: (
       <div className="text-gray-700 space-y-2">
         <ul>
@@ -159,25 +158,9 @@ const paymentMethods = [
     image: logoBcp,
     title: "Depósito en Agentes BCP",
     description:
-      "Realiza tu pago en cualquier agente o ventanilla BCP. Solo necesitas nuestro número de cuenta.",
+      "Acércate a un agente o ventanilla BCP y realiza tu depósito. ¡Fácil, rápido y sin complicaciones!",
     modalContent: (
       <div className="text-gray-700 space-y-2">
-        {/* <ul>
-          <li>Paso 1: Ir a pagar servicios</li>
-          <li>
-            Paso 2: Buscar: <strong>DIGO</strong>
-          </li>
-          <li>Paso 3: Ingresar DNI/CE/RUC</li>
-          <li>Paso 4: Pagar</li>
-        </ul>
-
-        <p>Titular: DIGO TELECOM SAC</p>
-        <p>N° Cuenta corriente: 2159940053091</p>
-        <p className="mt-2">
-          <strong>IMPORTANTE!</strong> Reportar su pago al canal{" "}
-          <strong>Oficial de DIGO 017012341</strong>
-        </p> */}
-
         <h2 className="font-semibold">PRIMERA OPCIÓN:</h2>
         <ul>
           <li>Paso 1: Ir al agente </li>
@@ -198,7 +181,8 @@ const paymentMethods = [
         </ul>
 
         <p className="mt-2">
-          Para pagos desde otros BANCOS brindar CCI: <strong>00221500994005309123</strong>
+          Para pagos desde otros BANCOS brindar CCI:{" "}
+          <strong>00221500994005309123</strong>
         </p>
 
         <p className="mt-2">
@@ -252,7 +236,7 @@ export const PaymentMethodsSection = () => {
               </h3>
               <p className="text-gray-600 mb-4">{method.description}</p>
               <Button
-                variant="default"
+                variant="secondary"
                 onClick={() => setSelectedMethod(method)}
               >
                 Ver Detalles
