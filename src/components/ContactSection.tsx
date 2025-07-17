@@ -72,7 +72,7 @@ const ContactSection = () => {
                       <SelectContent>
                         {plans.map((plan) => {
                           return (
-                            <SelectItem value={plan.name} key={plan.id}>
+                            <SelectItem value={`${plan.id} ${plan.name}`} key={plan.id}>
                               {`${plan.name} ${plan.speed}`}
                             </SelectItem>
                           );

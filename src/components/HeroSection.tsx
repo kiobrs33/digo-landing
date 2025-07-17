@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useWhatsapp } from "@/hooks/useWhatsapp";
 import { ArrowRight, Zap } from "lucide-react";
 
-import benchImg from "@/assets/images/bench.jpg";
+// import benchImg from "@/assets/images/bench.jpg";
 import { Carousel } from "@/modules/home/components/Carousel";
 import { carouselImages } from "@/data/constants";
 

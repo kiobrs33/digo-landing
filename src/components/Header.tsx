@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, LogIn } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -37,6 +37,16 @@ const Header = () => {
       }, 100);
     }
   }, [location]);
+
+  const handleLogin = () => {
+    window.open(
+      "https://digo-inventory-front.vercel.app/login",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <header
@@ -133,6 +143,13 @@ const Header = () => {
               {!isMobile && <Phone size={16} />}
               <span>Contratar Ahora</span>
             </Button>
+            <Button
+              variant="default"
+              className="bg-primary hover:bg-primary-light flex items-center gap-2"
+              onClick={() => handleLogin()}
+            >
+              <span>Login</span>
+            </Button>
             {/* <Button
               variant="default"
               className="flex items-center gap-2"
@@ -165,6 +182,7 @@ const Header = () => {
                 <NavLink
                   to="/#hero"
                   className="text-gray-700 hover:text-primary transition-colors"
+                  onClick={closeMobileMenu}
                 >
                   Inicio
                 </NavLink>
@@ -173,6 +191,7 @@ const Header = () => {
                 <NavLink
                   to="/#beneficios"
                   className="text-gray-700 hover:text-primary transition-colors"
+                  onClick={closeMobileMenu}
                 >
                   Beneficios
                 </NavLink>
@@ -181,6 +200,7 @@ const Header = () => {
                 <NavLink
                   to="/#planes"
                   className="text-gray-700 hover:text-primary transition-colors"
+                  onClick={closeMobileMenu}
                 >
                   Planes
                 </NavLink>
@@ -189,6 +209,7 @@ const Header = () => {
                 <NavLink
                   to="/#proceso"
                   className="text-gray-700 hover:text-primary transition-colors"
+                  onClick={closeMobileMenu}
                 >
                   Instalacion
                 </NavLink>
@@ -197,6 +218,7 @@ const Header = () => {
                 <NavLink
                   to="/#testimonios"
                   className="text-gray-700 hover:text-primary transition-colors"
+                  onClick={closeMobileMenu}
                 >
                   Testimonios
                 </NavLink>
@@ -205,6 +227,7 @@ const Header = () => {
                 <NavLink
                   to="/#pago"
                   className="text-gray-700 hover:text-primary transition-colors"
+                  onClick={closeMobileMenu}
                 >
                   Pagos
                 </NavLink>
@@ -221,14 +244,25 @@ const Header = () => {
                 <Button
                   variant="default"
                   className="w-full bg-secondary hover:bg-secondary-light flex items-center justify-center gap-2"
-                  onClick={() =>
+                  onClick={() => {
                     sendMessageHandle(
                       "Hola, estoy interesado en contratar el servicio."
-                    )
-                  }
+                    );
+                    closeMobileMenu();
+                  }}
                 >
                   <Phone size={16} />
                   <span>Contratar Ahora</span>
+                </Button>
+                <Button
+                  variant="default"
+                  className="w-full bg-primary hover:bg-primary-light flex items-center justify-center gap-2 mt-2"
+                  onClick={() => {
+                    handleLogin();
+                    closeMobileMenu();
+                  }}
+                >
+                  <span>Login</span>
                 </Button>
               </li>
             </ul>

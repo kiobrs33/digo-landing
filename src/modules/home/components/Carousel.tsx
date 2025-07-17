@@ -55,7 +55,7 @@ export const Carousel = ({ images, interval = 4000 }: ImageCarouselProps) => {
             key={index}
             src={img}
             alt={`Slide ${index}`}
-            className="w-full flex-shrink-0 lg:h-[500px] sm:h-[300px] md:h-[400px] object-fill"
+            className="w-full flex-shrink-0 lg:h-[500px] sm:h-[400px] md:h-[400px]  object-fill"
           />
         ))}
       </div>
