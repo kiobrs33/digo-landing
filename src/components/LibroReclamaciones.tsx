@@ -30,7 +30,7 @@ const schema = z.object({
   }),
   documentNumber: z.string().min(1, "Requerido"),
   product: z.string().optional(),
-  description: z.string().min(1, "Agrega una descripción"),
+  description: z.string().min(11, "Agrega una descripción"),
 });
 
 type FormData = z.infer<typeof schema>;
