@@ -61,7 +61,7 @@ const PricingSection = () => {
                     <p className="plan__price">
                       S/ <strong>{plan.price}</strong> x año
                     </p>
-                    <b>Pago único</b>
+                    <b className="plan__price-anual">Pago único, ahorras un 8.33%</b>
                     <p className="plan__price-regular">
                       Precio Regular: S/{plan.priceRegular}
                     </p>

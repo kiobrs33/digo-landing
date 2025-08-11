@@ -177,6 +177,13 @@
   margin: 20px 0 0;
 }
 
+.plan__price-anual {
+  font-size: 0.9rem;
+  color: #021a73;
+  margin: 20px 0 0;
+}
+
+
 .plan__price-regular {
   font-size: 0.8rem;
   color: #aaa;
