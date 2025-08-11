@@ -26,14 +26,14 @@ const PricingSection = () => {
               >
                 Mensual
               </button>
-              <button
+              {/* <button
                 className={`px-4 py-2 rounded-md ${
                   isAnnual ? "bg-white shadow-md" : ""
                 }`}
                 onClick={() => setIsAnnual(true)}
               >
                 Anual (2 meses gratis)
-              </button>
+              </button> */}
             </div>
           </div>
 

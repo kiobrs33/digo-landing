@@ -1,5 +1,5 @@
-// src/api/axios.ts
 import { config } from "@/config/env";
+import { AuthState } from "@/modules/auth/types/authTypes";
 import axios from "axios";
 
 export const axiosInstance = axios.create({
@@ -10,23 +10,25 @@ export const axiosInstance = axios.create({
   },
 });
 
-// INTERCEPTORES (opcional)
-// axiosInstance.interceptors.request.use(
-//   (config) => {
-//     // const token = localStorage.getItem("token");
-//     const token = store.getState().auth.token;
-//     if (token) {
-//       config.headers.Authorization = `Bearer ${token}`;
-//     }
-//     return config;
-//   },
-//   (error) => Promise.reject(error)
-// );
+// TODO: INTERCEPTORES
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const { token }: AuthState = JSON.parse(
+      localStorage.getItem("authState") || "{}"
+    );
+    // const token = store.getState().auth.token;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.log("ERROR axios", error);
+    console.log("ERROR en AXIOS => ", error);
     return Promise.reject(error);
   }
 );
