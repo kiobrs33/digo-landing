@@ -66,15 +66,14 @@ export const plansYear = [
     id: 1,
     name: "Plan Básico",
     speed: "300",
-    price: 590,
-    priceRegular: 590,
+    price: 708,
+    priceRegular: 708,
     features: [
       "Router WiFi incluido",
       "Instalación gratuita",
       "Soporte técnico",
       "Cambio de domicilio gratuito",
       "IP standart",
-      "2 meses gratis",
     ],
     isPopular: false,
   },
@@ -82,15 +81,14 @@ export const plansYear = [
     id: 2,
     name: "Plan Estándar",
     speed: "500",
-    price: 790,
-    priceRegular: 790,
+    price: 948,
+    priceRegular: 948,
     features: [
       "Router WiFi 5 incluido",
       "Instalación gratuita",
       "Soporte técnico",
       "Cambio de domicilio gratuito",
       "Tv Digital Premiun",
-      "2 meses gratis",
     ],
     isPopular: true,
   },
@@ -98,15 +96,14 @@ export const plansYear = [
     id: 3,
     name: "Plan Premium",
     speed: "1000",
-    price: 990,
-    priceRegular: 990,
+    price: 1188,
+    priceRegular: 1188,
     features: [
       "Router WiFi 6 incluido",
       "Instalación gratuita",
       "Soporte técnico",
       "Cambio de domicilio gratuito",
       "Tv Digital Premiun Plus",
-      "2 meses gratis",
     ],
     isPopular: false,
   },
@@ -114,15 +111,14 @@ export const plansYear = [
     id: 4,
     name: "Plan Máx",
     speed: "2500",
-    price: 2500,
-    priceRegular: 2500,
+    price: 3000,
+    priceRegular: 3000,
     features: [
       "Router WiFi 6 incluido",
       "Instalación especializada",
       "Soporte técnico",
       "Cambio de domicilio gratuito",
       "Tv Digital Premiun Plus",
-      "2 meses gratis",
     ],
     isPopular: false,
   },
@@ -148,9 +144,9 @@ export const digoInformation = {
   ],
 };
 
-import asistenciaImg from "@/assets/images/digo-asistencia.jpg";
-import toritoImg from "@/assets/images/digo_torito.png";
-import jugueteImg from "@/assets/images/digo-juguete.jpg";
-import pascuaImg from "@/assets/images/digo-pascua.jpg";
-
-export const carouselImages = [asistenciaImg, toritoImg, jugueteImg, pascuaImg];
+export const carouselImages = [
+  "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-fiestas.jpg?alt=media&token=01e9d8d6-71c9-4bf6-9a4f-4dbed57d4c18",
+  "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-support.jpeg?alt=media&token=5890ec27-17c7-446f-8daa-5f40849412a2",
+  "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-fuchibol.jpg?alt=media&token=3af15cbc-e063-407b-9da4-49ca31f2bb52",
+  "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-juguete.jpg?alt=media&token=82a5b180-614b-4fed-9f65-105767cf617f",
+];

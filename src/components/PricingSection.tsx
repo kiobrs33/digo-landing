@@ -31,7 +31,7 @@ const PricingSection = () => {
               }`}
               onClick={() => setIsAnnual(true)}
             >
-              Anual (2 meses gratis)
+              Anual
             </button>
           </div>
         </div>
