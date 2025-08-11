@@ -66,7 +66,7 @@ export const plansYear = [
     id: 1,
     name: "Plan Básico",
     speed: "300",
-    price: 708,
+    price: 649,
     priceRegular: 708,
     features: [
       "Router WiFi incluido",
@@ -81,7 +81,7 @@ export const plansYear = [
     id: 2,
     name: "Plan Estándar",
     speed: "500",
-    price: 948,
+    price: 869,
     priceRegular: 948,
     features: [
       "Router WiFi 5 incluido",
@@ -96,7 +96,7 @@ export const plansYear = [
     id: 3,
     name: "Plan Premium",
     speed: "1000",
-    price: 1188,
+    price: 1089,
     priceRegular: 1188,
     features: [
       "Router WiFi 6 incluido",
@@ -111,7 +111,7 @@ export const plansYear = [
     id: 4,
     name: "Plan Máx",
     speed: "2500",
-    price: 3000,
+    price: 2750,
     priceRegular: 3000,
     features: [
       "Router WiFi 6 incluido",
