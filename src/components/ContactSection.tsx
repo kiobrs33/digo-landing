@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { digoInformation, plans } from "@/data/constants";
+import { digoInformation, plansMonth } from "@/data/constants";
 
 const ContactSection = () => {
   return (
@@ -70,9 +70,12 @@ const ContactSection = () => {
                         <SelectValue placeholder="Selecciona un plan" />
                       </SelectTrigger>
                       <SelectContent>
-                        {plans.map((plan) => {
+                        {plansMonth.map((plan) => {
                           return (
-                            <SelectItem value={`${plan.id} ${plan.name}`} key={plan.id}>
+                            <SelectItem
+                              value={`${plan.id} ${plan.name}`}
+                              key={plan.id}
+                            >
                               {`${plan.name} ${plan.speed}`}
                             </SelectItem>
                           );

@@ -1,4 +1,4 @@
-export const plans = [
+export const plansMonth = [
   {
     id: 1,
     name: "Plan Básico",
@@ -56,6 +56,73 @@ export const plans = [
       "Soporte técnico",
       "Cambio de domicilio gratuito",
       "Tv Digital Premiun Plus",
+    ],
+    isPopular: false,
+  },
+];
+
+export const plansYear = [
+  {
+    id: 1,
+    name: "Plan Básico",
+    speed: "300",
+    price: 590,
+    priceRegular: 590,
+    features: [
+      "Router WiFi incluido",
+      "Instalación gratuita",
+      "Soporte técnico",
+      "Cambio de domicilio gratuito",
+      "IP standart",
+      "2 meses gratis",
+    ],
+    isPopular: false,
+  },
+  {
+    id: 2,
+    name: "Plan Estándar",
+    speed: "500",
+    price: 790,
+    priceRegular: 790,
+    features: [
+      "Router WiFi 5 incluido",
+      "Instalación gratuita",
+      "Soporte técnico",
+      "Cambio de domicilio gratuito",
+      "Tv Digital Premiun",
+      "2 meses gratis",
+    ],
+    isPopular: true,
+  },
+  {
+    id: 3,
+    name: "Plan Premium",
+    speed: "1000",
+    price: 990,
+    priceRegular: 990,
+    features: [
+      "Router WiFi 6 incluido",
+      "Instalación gratuita",
+      "Soporte técnico",
+      "Cambio de domicilio gratuito",
+      "Tv Digital Premiun Plus",
+      "2 meses gratis",
+    ],
+    isPopular: false,
+  },
+  {
+    id: 4,
+    name: "Plan Máx",
+    speed: "2500",
+    price: 2500,
+    priceRegular: 2500,
+    features: [
+      "Router WiFi 6 incluido",
+      "Instalación especializada",
+      "Soporte técnico",
+      "Cambio de domicilio gratuito",
+      "Tv Digital Premiun Plus",
+      "2 meses gratis",
     ],
     isPopular: false,
   },
