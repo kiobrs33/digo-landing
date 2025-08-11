@@ -66,7 +66,7 @@ export const plansYear = [
     id: 1,
     name: "Plan Básico",
     speed: "300",
-    price: 649,
+    price: 637.2,
     priceRegular: 708,
     features: [
       "Router WiFi incluido",
@@ -81,7 +81,7 @@ export const plansYear = [
     id: 2,
     name: "Plan Estándar",
     speed: "500",
-    price: 869,
+    price: 853.2,
     priceRegular: 948,
     features: [
       "Router WiFi 5 incluido",
@@ -96,7 +96,7 @@ export const plansYear = [
     id: 3,
     name: "Plan Premium",
     speed: "1000",
-    price: 1089,
+    price: 1069.2,
     priceRegular: 1188,
     features: [
       "Router WiFi 6 incluido",
@@ -111,7 +111,7 @@ export const plansYear = [
     id: 4,
     name: "Plan Máx",
     speed: "2500",
-    price: 2750,
+    price: 2700,
     priceRegular: 3000,
     features: [
       "Router WiFi 6 incluido",
@@ -145,8 +145,8 @@ export const digoInformation = {
 };
 
 export const carouselImages = [
+  "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-ril.png?alt=media&token=e7530f6e-63ba-432c-8d32-1dbe371d61ae",
   "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-fiestas.jpg?alt=media&token=01e9d8d6-71c9-4bf6-9a4f-4dbed57d4c18",
   "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-support.jpeg?alt=media&token=5890ec27-17c7-446f-8daa-5f40849412a2",
   "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-fuchibol.jpg?alt=media&token=3af15cbc-e063-407b-9da4-49ca31f2bb52",
-  "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-juguete.jpg?alt=media&token=82a5b180-614b-4fed-9f65-105767cf617f",
 ];
