@@ -11,6 +11,10 @@ import { ProductsPage } from "@/modules/cart/pages/ProductsPage";
 import { ProductDetailPage } from "@/modules/cart/pages/ProductDetailPage";
 import { CartPage } from "@/modules/cart/pages/CartPage";
 import { useAuthContext } from "@/modules/auth/context/AuthContext";
+import { MikroLayout } from "@/layouts/MikroLayout";
+import { MikroClientPage } from "@/modules/mikrowisp/pages/MikroClientPage";
+import { MikroLoginPage } from "@/modules/mikrowisp/pages/MikroLoginPage";
+import { PagoPasarelaPage } from "@/modules/mikrowisp/pages/PagoPasarelaPage";
 
 export const AppRouter = () => {
   const { state } = useAuthContext();
@@ -31,6 +35,7 @@ export const AppRouter = () => {
           <Route path="/" element={<Index />} />
           <Route path="/libro-reclamaciones" element={<LibroReclamaciones />} />
           <Route path="/auth/login" element={<LoginPage />} />
+          <Route path="/auth/login-mikro" element={<MikroLoginPage />} />
         </Route>
       </Route>
 
@@ -49,7 +54,25 @@ export const AppRouter = () => {
           <Route path="/client/products" element={<ProductsPage />} />
           <Route path="/client/cart" element={<CartPage />} />
         </Route>
+
+        <Route element={<MikroLayout />} path="mikro">
+          <Route path="dashboard" element={<MikroClientPage />} />
+          <Route path="pago/:id" element={<PagoPasarelaPage />} />
+        </Route>
       </Route>
+      {/* 
+      <Route
+        element={
+          <ProtectedRoute
+            redirectTo="/auth/login-mikro"
+            isAllowed={state.isAuthenticated}
+          />
+        }
+      >
+        <Route element={<MikroLayout />} path="mikro">
+          <Route index element={<MikroClientPage />} />
+        </Route>
+      </Route> */}
 
       {/* Control para rutas inexistentes 404  not found */}
       <Route path="*" element={<NotFound />} />
