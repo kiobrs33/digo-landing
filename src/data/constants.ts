@@ -151,7 +151,7 @@ export const digoInformation = {
 };
 
 export const carouselImages = [
-  "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-aqp.png?alt=media&token=44731590-5f9e-4f48-9d98-6aca9fbed127",
+  "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-promocion1.png?alt=media&token=9875deec-89f1-49d8-bb8b-8375ea8b1e63  ",
   "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-ril.png?alt=media&token=e7530f6e-63ba-432c-8d32-1dbe371d61ae",
   "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-fiestas.jpg?alt=media&token=01e9d8d6-71c9-4bf6-9a4f-4dbed57d4c18",
   "https://firebasestorage.googleapis.com/v0/b/fir-ebc49.appspot.com/o/digo%2Fdigo-support.jpeg?alt=media&token=5890ec27-17c7-446f-8daa-5f40849412a2",
