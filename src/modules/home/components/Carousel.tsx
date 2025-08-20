@@ -47,7 +47,7 @@ export const Carousel = ({ images, interval = 4000 }: ImageCarouselProps) => {
     >
       {/* Slide track */}
       <div
-        className="flex transition-transform duration-700 ease-in-out bg-gradient-to-tr from-primary-light to-secondary"
+        className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {images.map((img, index) => (
