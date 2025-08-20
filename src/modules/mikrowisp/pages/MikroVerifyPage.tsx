@@ -158,7 +158,7 @@ export const MikroVerifyPage = () => {
               <span className="font-semibold">Código:</span>{" "}
               {maskData(cliente.codigo)}
             </p>
-            <p className="md:col-span-2">
+            <p className="md:col-span-2 break-words whitespace-normal">
               <span className="font-semibold">Dirección:</span>{" "}
               {maskData(cliente.direccion_principal)}
             </p>
