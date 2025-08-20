@@ -2,6 +2,10 @@ export interface MikroLoginDTO {
   identification: string;
 }
 
+export interface MikroVerifyDTO {
+  cedula: string;
+}
+
 export interface MikroUser {
   id: number;
   nombre: string;
@@ -58,17 +62,9 @@ export interface MikroUser {
     total_facturas: string;
   };
 }
-// export interface AuthState {
-//   isAuthenticated: boolean;
-//   user: User | null;
-//   token: string | null;
-// }
 
-// export type AuthAction =
-//   | { type: "LOGIN"; payload: { user: User; token: string } }
-//   | { type: "LOGOUT" };
-
-// export interface AuthContextType {
-//   state: AuthState;
-//   dispatch: Dispatch<AuthAction>;
-// }
+export interface MikroFactura {
+  IDFactura: number | string;
+  detalle: string;
+  valor: string | number;
+}
