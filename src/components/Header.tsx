@@ -40,13 +40,13 @@ const Header = () => {
     }
   }, [location]);
 
-  const handleLogin = () => {
-    window.open(
-      "https://digo-inventory-front.vercel.app/login",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
+  // const handleLogin = () => {
+  //   window.open(
+  //     "https://digo-inventory-front.vercel.app/login",
+  //     "_blank",
+  //     "noopener,noreferrer"
+  //   );
+  // };
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
@@ -263,7 +263,7 @@ const Header = () => {
                   <Phone size={16} />
                   <span>Contratar Ahora</span>
                 </Button>
-                <Button
+                {/* <Button
                   variant="default"
                   className="w-full bg-primary hover:bg-primary-light flex items-center justify-center gap-2 mt-2"
                   onClick={() => {
@@ -272,7 +272,7 @@ const Header = () => {
                   }}
                 >
                   <span>Login</span>
-                </Button>
+                </Button> */}
               </li>
             </ul>
           </nav>
