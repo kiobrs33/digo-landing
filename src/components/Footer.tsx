@@ -13,6 +13,7 @@ import BookImg from "@/assets/images/book.png";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { axiosInstance } from "@/api/axiosInstance";
+import { Button } from "./ui/button";
 
 const Footer = () => {
   useEffect(() => {
@@ -121,6 +122,19 @@ const Footer = () => {
                   Contacto
                 </NavLink>
               </li>
+              <Button
+                variant="default"
+                className="bg-secondary hover:bg-secondary-light flex items-center gap-2"
+                onClick={() => {
+                  window.open(
+                    "https://digo-inventory-front.vercel.app/login",
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
+                }}
+              >
+                <span>Login</span>
+              </Button>
             </ul>
           </div>
 

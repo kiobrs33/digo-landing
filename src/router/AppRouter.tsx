@@ -1,6 +1,5 @@
 import LibroReclamaciones from "@/components/LibroReclamaciones";
 import { MainLayout } from "@/layouts/MainLayout";
-import { LoginPage } from "@/modules/auth/pages/LoginPage";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import { Route, Routes } from "react-router-dom";
@@ -11,6 +10,7 @@ import { ProductsPage } from "@/modules/cart/pages/ProductsPage";
 import { ProductDetailPage } from "@/modules/cart/pages/ProductDetailPage";
 import { CartPage } from "@/modules/cart/pages/CartPage";
 import { useAuthContext } from "@/modules/auth/context/AuthContext";
+import { MikroVerifyPage } from "@/modules/mikrowisp/pages/MikroVerifyPage";
 
 export const AppRouter = () => {
   const { state } = useAuthContext();
@@ -30,7 +30,10 @@ export const AppRouter = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Index />} />
           <Route path="/libro-reclamaciones" element={<LibroReclamaciones />} />
-          <Route path="/auth/login" element={<LoginPage />} />
+
+          <Route path="client">
+            <Route path="identify" element={<MikroVerifyPage />} />
+          </Route>
         </Route>
       </Route>
 
