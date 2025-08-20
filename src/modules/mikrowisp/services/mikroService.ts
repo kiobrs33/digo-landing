@@ -10,7 +10,8 @@ export const verifyCedula = async (data: MikroVerifyDTO) => {
       ...data,
     }
   );
-  return response.data.datos[0];
+  // return response.data?.datos[0];
+  return response.data?.datos?.[0] ?? null;
 };
 
 export const getDeudas = async (data: MikroVerifyDTO) => {

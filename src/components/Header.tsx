@@ -24,6 +24,7 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Es para subir de nuevo al inicio, por cambio de navegacion
   useEffect(() => {
     const isOnHome = location.pathname === "/";
     const hasHash = location.hash;

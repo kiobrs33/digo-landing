@@ -1,54 +1,7 @@
-// import { useMikroVerifyPage } from "../hooks/useMikroVerifyPage";
-
-// export const MikroVerifyPage = () => {
-//   const { register, handleSubmit, errors, isSubmitting, userMikrowisp } =
-//     useMikroVerifyPage();
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-//       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
-//         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-//           Verificación de Identidad
-//         </h2>
-//         <form onSubmit={handleSubmit} className="space-y-4">
-//           <div>
-//             <label className="block text-sm font-medium text-gray-600 mb-1">
-//               Número de identificación
-//             </label>
-//             <input
-//               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-//               type="text"
-//               placeholder="Ingrese su número"
-//               {...register("cedula", {
-//                 required: "El número de cedula es obligatorio",
-//                 pattern: {
-//                   value: /^[0-9]{8,11}$/,
-//                   message: "Debe tener entre 8 y 11 dígitos",
-//                 },
-//               })}
-//             />
-//             {errors.cedula && (
-//               <p className="text-red-500 text-sm mt-1">
-//                 {errors.cedula.message}
-//               </p>
-//             )}
-//           </div>
-//           <button
-//             disabled={isSubmitting}
-//             type="submit"
-//             className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300"
-//           >
-//             {isSubmitting ? "Verificando..." : "Continuar"}
-//           </button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
 import React, { useMemo, useState } from "react";
 import { useMikroVerifyPage } from "../hooks/useMikroVerifyPage";
 import { MikroFactura } from "../types/mikroTypes";
+import { maskData } from "@/utils/maskData";
 // import type { MikroUser } from "../types/mikro"; // <-- ajusta la ruta si tu interfaz está en otro archivo
 
 /**
@@ -73,6 +26,7 @@ export const MikroVerifyPage = () => {
     userMikrowisp,
     resetUser, // opcional
     facturasMikrowisp,
+    errorMessage
   } = useMikroVerifyPage();
 
   const [paginaActual, setPaginaActual] = useState(1);
@@ -101,6 +55,14 @@ export const MikroVerifyPage = () => {
           <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
             Verificación de Identidad
           </h2>
+
+          {/* ⚠️ Mostrar error si no existe el cliente */}
+          {errorMessage && (
+            <div className="mb-4 p-3 rounded-lg bg-red-100 border border-red-400 text-red-700 text-sm text-center">
+              {errorMessage}
+            </div>
+          )}
+
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-1">
@@ -142,8 +104,8 @@ export const MikroVerifyPage = () => {
   const isSuspendido = estadoUpper === "SUSPENDIDO";
 
   return (
-    <section className="py-20 bg-white">
-      <div className="min-h-screen bg-gray-100 p-6">
+    <section className="py-20 bg-gray-50">
+      <div className="min-h-screen  p-6 container mx-auto px-4">
         {/* Encabezado */}
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold text-gray-900">
@@ -182,22 +144,23 @@ export const MikroVerifyPage = () => {
             </p>
             <p>
               <span className="font-semibold">Correo:</span>{" "}
-              {cliente.correo || "—"}
+              {maskData(cliente.correo) || "—"}
             </p>
             <p>
               <span className="font-semibold">Teléfono:</span>{" "}
-              {cliente.movil || cliente.telefono || "—"}
+              {maskData(cliente.movil) || cliente.telefono || "—"}
             </p>
             <p>
               <span className="font-semibold">DNI/Cédula:</span>{" "}
-              {cliente.cedula}
+              {maskData(cliente.cedula)}
             </p>
             <p>
-              <span className="font-semibold">Código:</span> {cliente.codigo}
+              <span className="font-semibold">Código:</span>{" "}
+              {maskData(cliente.codigo)}
             </p>
             <p className="md:col-span-2">
               <span className="font-semibold">Dirección:</span>{" "}
-              {cliente.direccion_principal}
+              {maskData(cliente.direccion_principal)}
             </p>
             {isSuspendido && cliente.fecha_suspendido && (
               <p className="md:col-span-2">
@@ -226,8 +189,8 @@ export const MikroVerifyPage = () => {
                 <tr className="bg-gray-100 text-gray-700">
                   <th className="py-2 px-4 border-b">ID Servicio</th>
                   <th className="py-2 px-4 border-b">Perfil</th>
-                  <th className="py-2 px-4 border-b">IP</th>
-                  <th className="py-2 px-4 border-b">MAC</th>
+                  {/* <th className="py-2 px-4 border-b">IP</th> */}
+                  {/* <th className="py-2 px-4 border-b">MAC</th> */}
                   <th className="py-2 px-4 border-b">Costo</th>
                   <th className="py-2 px-4 border-b">Estado</th>
                 </tr>
@@ -240,12 +203,12 @@ export const MikroVerifyPage = () => {
                       <td className="py-2 px-4 border-b text-center">
                         {s.perfil}
                       </td>
-                      <td className="py-2 px-4 border-b text-center">
+                      {/* <td className="py-2 px-4 border-b text-center">
                         {s.ip || s.ipap || "—"}
-                      </td>
-                      <td className="py-2 px-4 border-b text-center">
+                      </td> */}
+                      {/* <td className="py-2 px-4 border-b text-center">
                         {s.mac || "—"}
-                      </td>
+                      </td> */}
                       <td className="py-2 px-4 border-b text-center">
                         {s.costo}
                       </td>

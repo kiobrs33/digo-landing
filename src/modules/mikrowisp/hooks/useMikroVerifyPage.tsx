@@ -15,20 +15,30 @@ export const useMikroVerifyPage = () => {
   const [facturasMikrowisp, setFacturasMikrowisp] = useState<MikroFactura[]>(
     []
   );
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit: SubmitHandler<MikroVerifyDTO> = async (data) => {
     try {
       const client = await verifyCedula(data);
       const facturas = await getDeudas(data);
+
+      if (!client) {
+        setErrorMessage(
+          "No encontramos un cliente con ese número de identificación."
+        );
+      }
+
       setUserMikrowisp(client);
       setFacturasMikrowisp(facturas);
     } catch (error) {
-      console.error("Error de login", error);
+      // En el handleSubmit, si el backend devuelve que no existe:
+      console.error("Error", error);
     }
   };
 
   const resetUser = () => {
     setUserMikrowisp(null);
+    setErrorMessage("");
     reset();
   };
 
@@ -40,5 +50,6 @@ export const useMikroVerifyPage = () => {
     userMikrowisp,
     facturasMikrowisp,
     resetUser,
+    errorMessage,
   };
 };

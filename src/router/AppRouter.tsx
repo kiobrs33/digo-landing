@@ -1,6 +1,5 @@
 import LibroReclamaciones from "@/components/LibroReclamaciones";
 import { MainLayout } from "@/layouts/MainLayout";
-import { LoginPage } from "@/modules/auth/pages/LoginPage";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import { Route, Routes } from "react-router-dom";
@@ -11,8 +10,6 @@ import { ProductsPage } from "@/modules/cart/pages/ProductsPage";
 import { ProductDetailPage } from "@/modules/cart/pages/ProductDetailPage";
 import { CartPage } from "@/modules/cart/pages/CartPage";
 import { useAuthContext } from "@/modules/auth/context/AuthContext";
-import { MikroClientPage } from "@/modules/mikrowisp/pages/MikroClientPage";
-import { PagoPasarelaPage } from "@/modules/mikrowisp/pages/PagoPasarelaPage";
 import { MikroVerifyPage } from "@/modules/mikrowisp/pages/MikroVerifyPage";
 
 export const AppRouter = () => {
@@ -36,8 +33,6 @@ export const AppRouter = () => {
 
           <Route path="client">
             <Route path="identify" element={<MikroVerifyPage />} />
-            {/* <Route path="information" element={<MikroClientPage />} />
-            <Route path="pago/:id" element={<PagoPasarelaPage />} /> */}
           </Route>
         </Route>
       </Route>
@@ -58,19 +53,6 @@ export const AppRouter = () => {
           <Route path="/client/cart" element={<CartPage />} />
         </Route>
       </Route>
-      {/* 
-      <Route
-        element={
-          <ProtectedRoute
-            redirectTo="/auth/login-mikro"
-            isAllowed={state.isAuthenticated}
-          />
-        }
-      >
-        <Route element={<MikroLayout />} path="mikro">
-          <Route index element={<MikroClientPage />} />
-        </Route>
-      </Route> */}
 
       {/* Control para rutas inexistentes 404  not found */}
       <Route path="*" element={<NotFound />} />
