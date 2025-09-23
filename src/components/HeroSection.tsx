@@ -10,14 +10,14 @@ const HeroSection = () => {
   const { sendMessageHandle } = useWhatsapp();
 
   return (
-    <section className="h-auto xl:h-screen flex items-center pt-32 pb-20 bg-gradient-to-br from-blue-100 to-white" id="hero">
+    <section className="h-auto xl:h-screen flex items-center pt-32 pb-20 bg-gradient-to-br bg-primary" id="hero">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Internet Rápido y Estable para tu Hogar o Empresa
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-white mb-8">
               Disfruta de la mejor experiencia en línea con nuestra conexión de
               fibra óptica. Sin cortes, máxima velocidad y soporte técnico 24/7.
             </p>
@@ -47,7 +47,7 @@ const HeroSection = () => {
                 Solicitar Información
               </Button>
             </div>
-            <div className="mt-8 flex items-center text-sm text-gray-500">
+            <div className="mt-8 flex items-center text-sm text-gray-200">
               <Zap size={18} className="text-secondary mr-2" />
               <span>Instalación en 24-48 horas en zonas con cobertura</span>
             </div>

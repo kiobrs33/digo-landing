@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { plansMonth, plansYear } from "@/data/constants";
+import { useWhatsapp } from "@/hooks/useWhatsapp";
 
-const PricingSection = () => {
+const PlansSection = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const { sendMessageHandle } = useWhatsapp();
 
   return (
     <section id="planes" className="py-20 bg-gray-50">
@@ -19,7 +21,9 @@ const PricingSection = () => {
           <div className="mt-8 inline-flex items-center p-1 bg-gray-100 rounded-lg">
             <button
               className={`px-4 py-2 rounded-md ${
-                !isAnnual ? "bg-white shadow-md" : ""
+                !isAnnual
+                  ? "shadow-md bg-secondary-light text-white cursor-pointer"
+                  : ""
               }`}
               onClick={() => setIsAnnual(false)}
             >
@@ -27,7 +31,9 @@ const PricingSection = () => {
             </button>
             <button
               className={`px-4 py-2 rounded-md ${
-                isAnnual ? "bg-white shadow-md" : ""
+                isAnnual
+                  ? "shadow-md bg-secondary-light text-white cursor-pointer"
+                  : ""
               }`}
               onClick={() => setIsAnnual(true)}
             >
@@ -61,7 +67,9 @@ const PricingSection = () => {
                     <p className="plan__price">
                       S/ <strong>{plan.price}</strong> x año
                     </p>
-                    <b className="plan__price-anual">Pago único, ahorras un 10%</b>
+                    <b className="plan__price-anual">
+                      Pago único, ahorras un 10%
+                    </b>
                     <p className="plan__price-regular">
                       Precio Regular: S/{plan.priceRegular}
                     </p>
@@ -78,9 +86,16 @@ const PricingSection = () => {
                       ))}
                     </ul>
 
-                    <a href="#contacto" className="plan__cta-button">
+                    <button
+                      onClick={() =>
+                        sendMessageHandle(
+                          "Hola, estoy interesado en contratar el servicio."
+                        )
+                      }
+                      className="plan__cta-button"
+                    >
                       Contratar Ahora
-                    </a>
+                    </button>
                   </div>
                 );
               })
@@ -122,9 +137,16 @@ const PricingSection = () => {
                       ))}
                     </ul>
 
-                    <a href="#contacto" className="plan__cta-button">
+                    <button
+                      onClick={() =>
+                        sendMessageHandle(
+                          "Hola, estoy interesado en contratar el servicio."
+                        )
+                      }
+                      className="plan__cta-button"
+                    >
                       Contratar Ahora
-                    </a>
+                    </button>
                   </div>
                 );
               })}
@@ -139,4 +161,4 @@ const PricingSection = () => {
   );
 };
 
-export default PricingSection;
+export default PlansSection;

@@ -1,6 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
-import PricingSection from "@/components/PricingSection";
+import PricingSection from "@/components/PlansSection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CoverageSection from "@/components/CoverageSection";
