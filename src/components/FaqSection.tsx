@@ -1,28 +1,42 @@
-
-import React from 'react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import React from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
     question: "¿Cuánto tarda la instalación?",
-    answer: "La instalación se realiza en un plazo de 24-48 horas en zonas con cobertura, una vez confirmada la contratación. Nuestros técnicos se pondrán en contacto contigo para acordar el día y la hora que mejor te convenga."
+    answer:
+      "La instalación se realiza en un plazo de 24-48 horas en zonas con cobertura, una vez confirmada la contratación. Nuestros técnicos se pondrán en contacto contigo para acordar el día y la hora que mejor te convenga.",
+  },
+  {
+    question: "¿Hay permanencia en los contratos?",
+    answer:
+      "Trabajamos con un contrato mínimo de 6 meses, según la normativa de Osiptel. Además, nuestra página web está en actualización para brindarte un mejor servicio.",
   },
   {
     question: "¿La velocidad contratada es real?",
-    answer: "Sí, garantizamos al menos el 90% de la velocidad contratada. A diferencia de otras tecnologías, la fibra óptica ofrece velocidades simétricas y estables tanto de subida como de bajada."
+    answer:
+      "Sí, garantizamos al menos el 90% de la velocidad contratada. A diferencia de otras tecnologías, la fibra óptica ofrece velocidades simétricas y estables tanto de subida como de bajada.",
   },
   {
     question: "¿Puedo llevarme el servicio si me mudo?",
-    answer: "Por supuesto. Si te mudas a otra zona con cobertura, podemos trasladar tu servicio sin coste adicional. Solo necesitamos que nos avises con una semana de antelación para programar la nueva instalación."
+    answer:
+      "Por supuesto. Si te mudas a otra zona con cobertura, podemos trasladar tu servicio sin coste adicional. Solo necesitamos que nos avises con una semana de antelación para programar la nueva instalación.",
   },
   {
     question: "¿Qué router incluye el servicio?",
-    answer: "Proporcionamos routers de última generación adaptados a cada plan. Para el plan Premium incluimos un router WiFi 6 de alta gama que garantiza máximo alcance y estabilidad en toda tu casa."
+    answer:
+      "Proporcionamos routers de última generación adaptados a cada plan. Para el plan Premium incluimos un router WiFi 6 de alta gama que garantiza máximo alcance y estabilidad en toda tu casa.",
   },
   {
     question: "¿Cómo puedo pagar mi factura mensual?",
-    answer: "Ofrecemos varias modalidades de pago: domiciliación bancaria, tarjeta de crédito o transferencia. La factura es emitida el día 1 de cada mes y puedes consultarla en tu área de cliente."
-  }
+    answer:
+      "Ofrecemos varias modalidades de pago: domiciliación bancaria, tarjeta de crédito o transferencia. La factura es emitida el día 1 de cada mes y puedes consultarla en tu área de cliente.",
+  },
 ];
 
 const FaqSection = () => {
@@ -30,16 +44,22 @@ const FaqSection = () => {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Preguntas Frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Preguntas Frecuentes
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Resolvemos tus dudas sobre nuestro servicio de fibra óptica.
           </p>
         </div>
-        
+
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg border p-0">
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-white rounded-lg border p-0"
+              >
                 <AccordionTrigger className="px-6 py-4 hover:no-underline text-primary font-medium">
                   {faq.question}
                 </AccordionTrigger>
