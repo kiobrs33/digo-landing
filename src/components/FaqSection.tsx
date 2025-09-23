@@ -7,10 +7,6 @@ const faqs = [
     question: "¿Cuánto tarda la instalación?",
     answer: "La instalación se realiza en un plazo de 24-48 horas en zonas con cobertura, una vez confirmada la contratación. Nuestros técnicos se pondrán en contacto contigo para acordar el día y la hora que mejor te convenga."
   },
-  // {
-  //   question: "¿Hay permanencia en los contratos?",
-  //   answer: "No, en Digo Telecom no creemos en las permanencias. Puedes darte de baja cuando quieras sin ningún tipo de penalización. Estamos seguros de la calidad de nuestro servicio y por eso no necesitamos atarte con permanencias."
-  // },
   {
     question: "¿La velocidad contratada es real?",
     answer: "Sí, garantizamos al menos el 90% de la velocidad contratada. A diferencia de otras tecnologías, la fibra óptica ofrece velocidades simétricas y estables tanto de subida como de bajada."
