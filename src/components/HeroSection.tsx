@@ -10,7 +10,7 @@ const HeroSection = () => {
   const { sendMessageHandle } = useWhatsapp();
 
   return (
-    <section className="h-auto xl:h-screen flex items-center pt-32 pb-20 bg-gradient-to-br bg-primary" id="hero">
+    <section className="h-auto xl:h-screen flex items-center pt-32 pb-20 bg-gradient-to-br bg-primary-light" id="hero">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
