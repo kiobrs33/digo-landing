@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, LogIn } from "lucide-react";
+import { Menu, X, Phone, LogIn, Building2 } from "lucide-react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -152,12 +152,20 @@ const Header = () => {
             >
               <span>Login</span>
             </Button> */}
-            <Button
+            {/* <Button
               variant="default"
               className="bg-primary hover:bg-primary-light flex items-center gap-2"
               onClick={() => navigate("client/identify")}
             >
               <span>Consultar</span>
+            </Button> */}
+            <Button
+              variant="default"
+              className="bg-primary hover:bg-primary-light flex items-center gap-2"
+              onClick={() => navigate("digo-empresas")}
+            >
+              {!isMobile && <Building2 size={16} />}
+              <span>DIGO EMPRESAS</span>
             </Button>
             {/* <Button
               variant="default"
@@ -262,6 +270,14 @@ const Header = () => {
                 >
                   <Phone size={16} />
                   <span>Contratar Ahora</span>
+                </Button>
+                <Button
+                  variant="default"
+                  className="bg-primary hover:bg-primary-light flex items-center gap-2 w-full mt-2"
+                  onClick={() => navigate("digo-empresas")}
+                >
+                  {!isMobile && <Building2 size={16} />}
+                  <span>DIGO EMPRESAS</span>
                 </Button>
                 {/* <Button
                   variant="default"

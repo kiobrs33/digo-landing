@@ -11,6 +11,7 @@ import { ProductDetailPage } from "@/modules/cart/pages/ProductDetailPage";
 import { CartPage } from "@/modules/cart/pages/CartPage";
 import { useAuthContext } from "@/modules/auth/context/AuthContext";
 import { MikroVerifyPage } from "@/modules/mikrowisp/pages/MikroVerifyPage";
+import DigoEmpresasView from "@/pages/DigoEmpresasView";
 
 export const AppRouter = () => {
   const { state } = useAuthContext();
@@ -30,6 +31,7 @@ export const AppRouter = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Index />} />
           <Route path="/libro-reclamaciones" element={<LibroReclamaciones />} />
+          <Route path="/digo-empresas" element={<DigoEmpresasView />} />
 
           <Route path="client">
             <Route path="identify" element={<MikroVerifyPage />} />
